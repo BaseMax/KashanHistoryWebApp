@@ -26,7 +26,7 @@ const LoadingPage: React.FC = () => {
     <div className="min-h-screen flex flex-col items-center justify-center bg-[#e1a781] transition-colors duration-700">
       <img
         ref={logoRef}
-        src="/assets/logo-light.png"
+        src={`${import.meta.env.BASE_URL}assets/logo-light.png`}
         alt="Logo"
         className="w-28 h-28 rounded-full shadow-lg mb-6 animate-pulse"
         style={{ transition: "transform 0.2s" }}

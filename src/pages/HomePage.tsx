@@ -22,10 +22,10 @@ const HomePage: React.FC = () => (
           <ImageSlider
             heightClass="h-44"
             images={[
-              { src: "/assets/sliders/1.jpg", alt: "منطقه گردشگری ۱" },
-              { src: "/assets/sliders/2.jpg", alt: "منطقه گردشگری ۲" },
-              { src: "/assets/sliders/3.jpg", alt: "منطقه گردشگری ۳" },
-              { src: "/assets/sliders/4.jpg", alt: "منطقه گردشگری ۳" },
+              { src: `${import.meta.env.BASE_URL}assets/sliders/1.jpg`, alt: "منطقه گردشگری ۱" },
+              { src: `${import.meta.env.BASE_URL}assets/sliders/2.jpg`, alt: "منطقه گردشگری ۲" },
+              { src: `${import.meta.env.BASE_URL}assets/sliders/3.jpg`, alt: "منطقه گردشگری ۳" },
+              { src: `${import.meta.env.BASE_URL}assets/sliders/4.jpg`, alt: "منطقه گردشگری ۳" },
             ]}
             autoPlayMs={3500}
           />

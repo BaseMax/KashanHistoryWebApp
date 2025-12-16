@@ -22,7 +22,7 @@ export default function TopNav({ title, hasLogo = true, showBack = false }: TopN
         <div className="flex items-center justify-between gap-3">
           <div className="flex items-center gap-3">
             {hasLogo && (
-              <img src="/assets/logo-light.png" alt="Logo" className="w-15 h-15 rounded" />
+              <img src={`${import.meta.env.BASE_URL}assets/logo-light.png`} alt="Logo" className="w-15 h-15 rounded" />
             )}
             <h1 className="text-xl font-bold">{title}</h1>
           </div>
@@ -39,7 +39,7 @@ export default function TopNav({ title, hasLogo = true, showBack = false }: TopN
         <div className="flex items-center justify-center gap-3">
           <div className="flex items-center gap-3">
             {hasLogo && (
-              <img src="/assets/logo-light.png" alt="Logo" className="w-15 h-15 rounded" />
+              <img src={`${import.meta.env.BASE_URL}assets/logo-light.png`} alt="Logo" className="w-15 h-15 rounded" />
             )}
             <h1 className="text-xl font-bold">{title}</h1>
           </div>

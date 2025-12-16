@@ -15,8 +15,12 @@ import SmartSuggestPage from "./pages/SmartSuggestPage";
 import MapPage from "./pages/MapPage";
 
 export default function App() {
+  const basePath = import.meta.env.BASE_URL;
+
+  console.log("Base path is:", basePath);
+
   return (
-    <Router>
+    <Router basename={basePath}>
       <Routes>
         <Route path="/" element={<LoadingPage />} />
 
