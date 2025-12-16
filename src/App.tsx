@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Navigate } from "react-router-dom";
 
-
 import ProtectedRoute from "./routes/ProtectedRoute";
 import PublicRoute from "./routes/PublicRoute";
 import NotFoundPage from "./pages/NotFoundPage";
@@ -13,8 +12,6 @@ import CityAttractionsPage from "./pages/CityAttractionsPage";
 import AttractionDetailPage from "./pages/AttractionDetailPage";
 import FavoritesPage from "./pages/FavoritesPage";
 import SmartSuggestPage from "./pages/SmartSuggestPage";
-import CulturePage from "./pages/CulturePage";
-import EcotourismPage from "./pages/EcotourismPage";
 import MapPage from "./pages/MapPage";
 
 export default function App() {
@@ -31,15 +28,11 @@ export default function App() {
 
         <Route path="/city/:cityId/attractions" element={<CityAttractionsPage />} />
 
-        <Route path="/attraction/:attractionId" element={<AttractionDetailPage />} />
+        <Route path="/city/:cityId/attraction/:attractionId" element={<AttractionDetailPage />} />
 
         <Route path="/favorites" element={<FavoritesPage />} />
 
         <Route path="/smart-suggest" element={<SmartSuggestPage />} />
-
-        <Route path="/culture" element={<CulturePage />} />
-
-        <Route path="/ecotourism" element={<EcotourismPage />} />
 
         <Route path="/map" element={<MapPage />} />
 

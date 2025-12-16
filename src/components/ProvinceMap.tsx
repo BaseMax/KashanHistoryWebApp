@@ -1,15 +1,12 @@
 import React from "react";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-
-const cities = [
-  { name: "کاشان", lat: 33.985, lng: 51.409 },
-  { name: "اصفهان", lat: 32.6546, lng: 51.668 },
-  { name: "نطنز", lat: 33.513, lng: 51.916 },
-  { name: "اردستان", lat: 33.376, lng: 52.369 },
-];
+import { citiesData} from "../data/cities";
+import type { City} from "../data/cities";
 
 const AnyMapContainer = MapContainer as any;
+
+const cities = citiesData as City[];
 
 interface ProvinceMapProps {
   className?: string;
@@ -35,8 +32,8 @@ const ProvinceMap: React.FC<ProvinceMapProps> = ({ className = "", fillParent = 
     center={[32.6546, 51.668]}
     zoom={8}
     scrollWheelZoom={false}
-    className="absolute inset-0"
-    style={{ width: "100%", height: "100%", direction: "ltr" }}
+    className={`absolute inset-0 ${className}`}
+    style={{ width: "100%", height: fillParent ? "100%" : "100%", direction: "ltr" }}
   >
     <MapSizeFix />
     <TileLayer

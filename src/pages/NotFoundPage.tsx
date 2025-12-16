@@ -24,9 +24,6 @@ export default function NotFoundPage() {
             <Link to="/home" className="px-4 py-2 rounded-lg bg-primary text-white hover:opacity-90 transition">
               بازگشت به خانه
             </Link>
-            <Link to="/login" className="px-4 py-2 rounded-lg bg-gray-200 text-gray-800 hover:bg-gray-300 transition">
-              صفحه ورود
-            </Link>
           </div>
         </div>
       </main>
