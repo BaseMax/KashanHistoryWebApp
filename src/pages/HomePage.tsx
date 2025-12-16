@@ -9,6 +9,7 @@ import BottomNav from "../components/BottomNav";
 import ProvinceMap from "../components/ProvinceMap";
 import StatsCard from "../components/StatsCard";
 import CityCategoryCard from "../components/CityCategoryCard";
+import ImageSlider from "../components/ImageSlider";
 
 
 // داده نمونه برای آمار و شهرها
@@ -25,14 +26,26 @@ const cities = [
   { name: "اردستان", desc: "آب‌انبارها و معماری خاص", icon: <BuildingOffice2Icon className="w-6 h-6 text-pink-400" /> },
 ];
 
-const ProvinceIntroPage: React.FC = () => (
+const HomePage: React.FC = () => (
   <Screen>
-    <TopNav title="اصفهانم" showBack={false} />
+    <TopNav title="اصفهانم" showBack={true} />
     <main className="flex-1 p-6 w-full">
       <Container>
+        {/* اسلایدر تصاویر بالای صفحه */}
+        <div className="mb-4">
+          <ImageSlider
+            heightClass="h-44"
+            images={[
+              { src: "/assets/slider/slide1.jpg", alt: "منطقه گردشگری ۱" },
+              { src: "/assets/slider/slide2.jpg", alt: "منطقه گردشگری ۲" },
+              { src: "/assets/slider/slide3.jpg", alt: "منطقه گردشگری ۳" },
+            ]}
+            autoPlayMs={3500}
+          />
+        </div>
         <h1 className="text-3xl font-bold mb-4">استان اصفهان</h1>
-        {/* نقشه SVG */}
         <ProvinceMap />
+
         <p className="mb-4 text-gray-700 text-center">استان اصفهان با تنوع فرهنگی و اقلیمی و ظرفیت بالای گردشگری، دارای شهرها و روستاهای متعدد است.</p>
         {/* آمار */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-6">
@@ -64,4 +77,4 @@ const ProvinceIntroPage: React.FC = () => (
   </Screen>
 );
 
-export default ProvinceIntroPage;
+export default HomePage;

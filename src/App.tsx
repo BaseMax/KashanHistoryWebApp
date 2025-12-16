@@ -5,7 +5,8 @@ import { Navigate } from "react-router-dom";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import PublicRoute from "./routes/PublicRoute";
 import NotFoundPage from "./pages/NotFoundPage";
-import ProvinceIntroPage from "./pages/ProvinceIntroPage";
+import HomePage from "./pages/HomePage";
+import LoadingPage from "./pages/LoadingPage";
 import CitiesListPage from "./pages/CitiesListPage";
 import CityDetailPage from "./pages/CityDetailPage";
 import CityAttractionsPage from "./pages/CityAttractionsPage";
@@ -21,7 +22,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<LoadingPage />} />
 
-        <Route path="/home" element={<ProvinceIntroPage />} />
+        <Route path="/home" element={<HomePage />} />
 
         <Route path="/cities" element={<CitiesListPage />} />
 

@@ -15,8 +15,10 @@
     "axios": "^1.13.2",
     "caniuse-lite": "^1.0.30001760",
     "jalaali-js": "^1.2.8",
+    "leaflet": "^1.9.4",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
+    "react-leaflet": "^5.0.0",
     "react-router-dom": "^7.10.1"
   },
   "devDependencies": {
