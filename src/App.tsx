@@ -14,7 +14,7 @@ export default function App() {
   const basePath = import.meta.env.BASE_URL;
 
   const RouterComponent =
-    (import.meta.env.PROD === true || import.meta.env.NODE_ENV === "production") ? HashRouter : BrowserRouter;
+    (import.meta.env.DEV !== true || import.meta.env.MODE !== "development") ? HashRouter : BrowserRouter;
   console.log(basePath, import.meta.env);
 
   return (
