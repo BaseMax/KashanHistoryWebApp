@@ -57,17 +57,6 @@ export default function BottomNav() {
       </NavLink>
 
       <NavLink
-        to="/ecotourism"
-        aria-label="بوم‌گردی"
-        className={({ isActive }) =>
-          `w-20 flex flex-col items-center justify-center px-3 py-1.5 rounded-md ${isActive ? "bg-primary text-white" : "text-gray-600"}`
-        }
-      >
-        <HomeModernIcon className="h-6 w-6" />
-        <span className="text-sm mt-0.5">بوم‌گردی</span>
-      </NavLink>
-
-      <NavLink
         to="/map"
         aria-label="نقشه"
         className={({ isActive }) =>

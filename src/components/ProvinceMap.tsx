@@ -30,7 +30,7 @@ const MapSizeFix: React.FC = () => {
 const ProvinceMap: React.FC<ProvinceMapProps> = ({ className = "", fillParent = false }) => (
   <AnyMapContainer
     center={[32.6546, 51.668]}
-    zoom={8}
+    zoom={10}
     scrollWheelZoom={false}
     className={`absolute inset-0 ${className}`}
     style={{ width: "100%", height: fillParent ? "100%" : "100%", direction: "ltr" }}
@@ -38,8 +38,6 @@ const ProvinceMap: React.FC<ProvinceMapProps> = ({ className = "", fillParent = 
     <MapSizeFix />
     <TileLayer
       url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      // @ts-ignore
-      attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     />
     {cities.map((city) => (
       <Marker key={city.name} position={[city.lat, city.lng]}>
