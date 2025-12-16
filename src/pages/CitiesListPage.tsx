@@ -46,36 +46,76 @@ const colors: string[] = [
   "text-blue-700",
 ];
 
-const CitiesListPage: React.FC = () => (
-  <Screen>
-    <TopNav title="شهرهای استان اصفهان" showBack={true} />
-    <main className="flex-1 p-6 w-full">
-      <Container>
-        <ul className="space-y-4">
-          {(citiesData as City[]).map((city: City, index: number) => {
-            const iconColor = colors[index % colors.length];
-            return (
-              <li key={city.name} className="list-none">
-                <Link
-                  to={`/cities/${city.name}`}
-                  className="block w-full cursor-pointer bg-white rounded shadow p-3"
+const CitiesListPage: React.FC = () => {
+  const [selectedLetter, setSelectedLetter] = React.useState<string>("همه");
+
+  const letters = React.useMemo(() => {
+    const uniq = new Set<string>();
+    (citiesData as City[]).forEach((city) => {
+      const first = city.name?.trim()?.[0];
+      if (first) uniq.add(first);
+    });
+    return ["همه", ...Array.from(uniq).sort((a, b) => a.localeCompare(b))];
+  }, []);
+
+  const filtered = React.useMemo(() => {
+    if (selectedLetter === "همه") return citiesData as City[];
+    return (citiesData as City[]).filter((c) => c.name.trim().startsWith(selectedLetter));
+  }, [selectedLetter]);
+
+  return (
+    <Screen>
+      <TopNav title="شهرهای استان اصفهان" showBack={true} />
+      <main className="flex-1 p-6 w-full">
+        <Container>
+          <div className="mb-4">
+            <div className="flex gap-2 overflow-x-auto pb-2 rtl" style={{ scrollbarWidth: "thin" }}>
+              {letters.map((letter) => (
+                <button
+                  key={letter}
+                  onClick={() => setSelectedLetter(letter)}
+                  className={`px-3 py-1.5 rounded-full border text-sm whitespace-nowrap transition-colors duration-200 ${
+                    selectedLetter === letter
+                      ? "bg-primary text-white border-primary"
+                      : "bg-white text-gray-700 border-gray-300"
+                  }`}
+                  aria-pressed={selectedLetter === letter}
                 >
-                  <div className="flex items-center w-full">
-                    <BuildingOffice2Icon className={`w-7 h-7 ml-2 ${iconColor}`} />
-                    <div>
-                      <div className="font-semibold">{city.name}</div>
-                      <div className="text-sm text-gray-500">{city.famousFor || ""}</div>
+                  {letter}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <ul className="space-y-4">
+            {filtered.map((city: City, index: number) => {
+              const iconColor = colors[index % colors.length];
+              return (
+                <li key={city.name} className="list-none">
+                  <Link
+                    to={`/city/${city.name}`}
+                    className="block w-full cursor-pointer bg-white rounded shadow p-3"
+                  >
+                    <div className="flex items-center w-full">
+                      <BuildingOffice2Icon className={`w-7 h-7 ml-2 ${iconColor}`} />
+                      <div>
+                        <div className="font-semibold">{city.name}</div>
+                        <div className="text-sm text-gray-500">{city.famousFor || ""}</div>
+                      </div>
                     </div>
-                  </div>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </Container>
-    </main>
-    <BottomNav />
-  </Screen>
-);
+                  </Link>
+                </li>
+              );
+            })}
+            {filtered.length === 0 && (
+              <li className="text-sm text-gray-500">شهری با این حرف پیدا نشد.</li>
+            )}
+          </ul>
+        </Container>
+      </main>
+      <BottomNav />
+    </Screen>
+  );
+};
 
 export default CitiesListPage;

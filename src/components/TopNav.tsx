@@ -30,7 +30,7 @@ export default function TopNav({ title, hasLogo = true, showBack = false }: TopN
             type="button"
             onClick={handleBack}
             aria-label="بازگشت"
-            className="order-1 flex items-center justify-center"
+            className="order-1 flex items-center justify-center cursor-pointer"
           >
             <ArrowLeftIcon className="w-7 h-7 text-white" />
           </button>
