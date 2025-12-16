@@ -11,14 +11,11 @@ import MapPage from "./pages/MapPage";
 import NotFoundPage from "./pages/NotFoundPage";
 
 export default function App() {
-  const basePath = import.meta.env.BASE_URL;
-
-  const RouterComponent =
-    (import.meta.env.DEV !== true || import.meta.env.MODE !== "development") ? HashRouter : BrowserRouter;
-  console.log(basePath, import.meta.env);
+  const RouterComponent = import.meta.env.PROD ? HashRouter : BrowserRouter;
+  console.log(import.meta.env.BASE_URL, import.meta.env);
 
   return (
-    <RouterComponent basename={basePath}>
+    <HashRouter basename={import.meta.env.BASE_URL}>
       <Routes>
         <Route path="/" element={<LoadingPage />} />
         <Route path="/home" element={<HomePage />} />
