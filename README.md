@@ -1,4 +1,44 @@
-# React TypeScript Tailwind ESLint Prettier Boilerplate
+# Isfahan History WebApp
+
+> Offline Local Tourism Web Application for Isfahan Province
+
+Isfahan History WebApp is a fully offline, client-side Progressive Web App (PWA) designed to showcase local and regional tourism across Isfahan Province, Iran. The app highlights lesser-known cities, villages, and cultural sites, emphasizing local lifestyle, traditions, and economy. It can also be converted into a standalone Android app using WebView.
+
+## Key Features
+
+- Comprehensive offline database with local JSON data
+- Interactive maps using OpenStreetMap (no external services required)
+- City and region guides with images, descriptions, and cultural notes
+- Local tourism focus: traditional houses, local cuisine, festivals
+- Favorites system for quick offline access
+- Rule-based smart suggestions based on season, city, and user preferences
+- Optional multilingual support (Persian and English)
+- Easy offline navigation without Google Maps
+- Lightweight PWA installable on mobile and desktop
+
+## Technology Stack
+
+- Frontend: HTML5, CSS3 (TailwindCSS), JavaScript / TypeScript, React
+- Data: Static JSON, TODO: IndexedDB / LocalStorage
+- Maps: OpenStreetMap tiles
+
+## Project Goals
+
+- Promote local and underrepresented tourist destinations in Isfahan Province
+- Provide a fully offline, self-contained tourism app
+- Support local economy and culture
+- Serve as a demo-ready, deployable app for events or educational purposes
+
+## Future Development
+
+- Add local businesses and handicrafts sections
+- VR-based exploration of sites
+- Educational versions for schools
+- Versions tailored for visitors and pilgrims
+
+License: MIT
+
+------------
 
 A modern, production-ready React boilerplate with TypeScript, Tailwind CSS, ESLint, and Prettier pre-configured for optimal development experience.
 
