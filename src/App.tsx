@@ -15,6 +15,7 @@ import FavoritesPage from "./pages/FavoritesPage";
 import SmartSuggestPage from "./pages/SmartSuggestPage";
 import CulturePage from "./pages/CulturePage";
 import EcotourismPage from "./pages/EcotourismPage";
+import MapPage from "./pages/MapPage";
 
 export default function App() {
   return (
@@ -39,6 +40,8 @@ export default function App() {
         <Route path="/culture" element={<CulturePage />} />
 
         <Route path="/ecotourism" element={<EcotourismPage />} />
+
+        <Route path="/map" element={<MapPage />} />
 
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

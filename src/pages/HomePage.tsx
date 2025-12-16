@@ -28,7 +28,7 @@ const cities = [
 
 const HomePage: React.FC = () => (
   <Screen>
-    <TopNav title="اصفهانم" showBack={true} />
+    <TopNav title="اصفهانم" showBack={false} />
     <main className="flex-1 p-6 w-full">
       <Container>
         {/* اسلایدر تصاویر بالای صفحه */}
@@ -36,9 +36,10 @@ const HomePage: React.FC = () => (
           <ImageSlider
             heightClass="h-44"
             images={[
-              { src: "/assets/slider/slide1.jpg", alt: "منطقه گردشگری ۱" },
-              { src: "/assets/slider/slide2.jpg", alt: "منطقه گردشگری ۲" },
-              { src: "/assets/slider/slide3.jpg", alt: "منطقه گردشگری ۳" },
+              { src: "/assets/sliders/1.jpg", alt: "منطقه گردشگری ۱" },
+              { src: "/assets/sliders/2.jpg", alt: "منطقه گردشگری ۲" },
+              { src: "/assets/sliders/3.jpg", alt: "منطقه گردشگری ۳" },
+              { src: "/assets/sliders/4.jpg", alt: "منطقه گردشگری ۳" },
             ]}
             autoPlayMs={3500}
           />
