@@ -28,6 +28,6 @@ export default function App() {
         <Route path="/map" element={<MapPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
-    </RouterComponent>
+    </HashRouter>
   );
 }

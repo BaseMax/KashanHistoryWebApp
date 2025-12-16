@@ -93,7 +93,7 @@ const CitiesListPage: React.FC = () => {
               return (
                 <li key={city.name} className="list-none">
                   <Link
-                    to={`city/${city.name}`}
+                    to={`/city/${city.name}`}
                     className="block w-full cursor-pointer bg-white rounded shadow p-3"
                   >
                     <div className="flex items-center w-full">

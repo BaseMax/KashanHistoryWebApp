@@ -21,7 +21,7 @@ export default function NotFoundPage() {
             ممکن است آدرس را اشتباه وارد کرده باشید یا صفحه حذف شده باشد.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mt-2">
-            <Link to="home" className="px-4 py-2 rounded-lg bg-primary text-white hover:opacity-90 transition">
+            <Link to={`/home`} className="px-4 py-2 rounded-lg bg-primary text-white hover:opacity-90 transition">
               بازگشت به خانه
             </Link>
           </div>

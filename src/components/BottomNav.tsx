@@ -24,7 +24,7 @@ export default function BottomNav() {
       style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
     >
       <NavLink
-        to="home"
+        to={`/home`}
         aria-label="خانه"
         className={({ isActive }) =>
           `w-20 flex flex-col items-center justify-center px-3 py-1.5 rounded-md ${isActive ? "bg-primary text-white" : "text-gray-600"}`
@@ -35,7 +35,7 @@ export default function BottomNav() {
       </NavLink>
 
       <NavLink
-        to="cities"
+        to={`/cities`}
         aria-label="شهرها"
         className={({ isActive }) =>
           `w-20 flex flex-col items-center justify-center px-3 py-1.5 rounded-md ${isActive ? "bg-primary text-white" : "text-gray-600"}`
@@ -46,7 +46,7 @@ export default function BottomNav() {
       </NavLink>
 
       <NavLink
-        to="smart-suggest"
+        to={`/smart-suggest`}
         aria-label="پیشنهاد"
         className={({ isActive }) =>
           `w-20 flex flex-col items-center justify-center px-3 py-1.5 rounded-md ${isActive ? "bg-primary text-white" : "text-gray-600"}`
@@ -57,7 +57,7 @@ export default function BottomNav() {
       </NavLink>
 
       <NavLink
-        to="map"
+        to={`/map`}
         aria-label="نقشه"
         className={({ isActive }) =>
           `w-20 flex flex-col items-center justify-center px-3 py-1.5 rounded-md ${isActive ? "bg-primary text-white" : "text-gray-600"}`

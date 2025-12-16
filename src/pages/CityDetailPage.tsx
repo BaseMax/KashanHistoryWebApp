@@ -167,7 +167,7 @@ const CityDetailPage: React.FC = () => {
           <Container>
             <p className="text-sm text-gray-600 mb-4">نام شهر معتبر نیست.</p>
             <Link
-              to="cities"
+              to={`/cities`}
               className="inline-flex items-center gap-2 rounded-full bg-primary text-white px-4 py-2 text-sm shadow"
             >
               بازگشت به لیست شهرها
@@ -314,7 +314,7 @@ const CityDetailPage: React.FC = () => {
                     <h2 className="text-lg font-bold">جاهای دیدنی</h2>
                   </div>
                   <Link
-                    to={`city/${cityName}/attractions`}
+                    to={`/city/${cityName}/attractions`}
                     className="flex items-center gap-2 text-sm text-primary hover:text-primary/80"
                   >
                     مشاهده بیشتر
@@ -330,7 +330,7 @@ const CityDetailPage: React.FC = () => {
                   {featuredAttractions.map((attraction) => (
                     <Link
                       key={attraction.id}
-                      to={`city/${cityName}/attraction/${attraction.id}`}
+                      to={`/city/${cityName}/attraction/${attraction.id}`}
                       className="flex items-center gap-3 rounded-2xl border border-gray-100 bg-white p-3 shadow-sm hover:shadow-md transition"
                     >
                       <div className="relative h-20 w-24 overflow-hidden rounded-xl">

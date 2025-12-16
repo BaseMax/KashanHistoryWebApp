@@ -8,7 +8,7 @@ type Props = {
 
 export default function ProtectedRoute({ children }: Props) {
   if (!isAuthenticated()) {
-    return <Navigate to="login" replace />;
+    return <Navigate to={`/login`} replace />;
   }
   return <>{children}</>;
 }
